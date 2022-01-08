@@ -1,9 +1,11 @@
 {
   "name": "robotics-orentation",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "node MCU + ultrasonic + socket.io",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,5 +14,8 @@
     "express": "^4.17.2",
     "pug": "^3.0.2",
     "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
