@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const http = require('http');
 const { instrument } = require("@socket.io/admin-ui");
+const favicon = require('serve-favicon')
 const path = require('path')
 const server = http.createServer(app);
 const { Server } = require("socket.io");
@@ -16,7 +17,8 @@ const io = new Server(server, {
 require('dotenv').config();
 
 const PORT = Number(process.env.PORT || 3000);
-
+// add a favicon
+app.use(favicon(path.join(__dirname, 'views', 'assets/icon/favicon.ico')))
 // using template engine pug
 app.set('view engine', 'pug')
 
