@@ -1,16 +1,7 @@
-
-
 const URL = "http://localhost:5000/";
-
-
-
-
-
 
 // Socket.io Code-->
 const socket = io(URL);
-
-let Data;
 
 // client-side
  socket.on("connection", (data) => {
@@ -18,7 +9,6 @@ let Data;
      console.log(data);
 
  });
-
 
 //  let Data_Distance;
  //Chart- Data
