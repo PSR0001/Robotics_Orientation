@@ -1,6 +1,15 @@
 const URL = "http://localhost:5000/";
 
 
+// custom cursor
+const cursor = document.querySelector('.cursor')
+
+document.addEventListener('mousemove', e => {
+  cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+})
+
+
+
 // Socket.io Code-->
 const socket = io(URL);
 
@@ -26,7 +35,7 @@ let Data;
      console.log(socket.id); // undefined
  });
 
- 
+
 /*---Chart JS code---*/
 const showChart = () => {
     const ctx = document.getElementById('chart').getContext('2d');

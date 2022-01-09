@@ -1,4 +1,45 @@
+body {
+  margin: 0;
+  height: 100vh
+}
+
 .chart {
     width: 900px;
     height: 500px;
+  }
+
+  .cursor {
+    width: 33px;
+    height: 33px;
+    border: 2px solid white;
+    background-color: rgba(255, 99, 132, 0.2);
+    opacity: 0.5;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+  
+  }
+  
+  .cursor::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 2px dashed rgba(255, 99, 132, 1);
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    animation : animate 5s linear infinite;
+  }
+  
+  @keyframes animate {
+  
+   0%{
+     transform:rotate(0deg)
+  
+  }
+  100%{
+    transform: rotate(360deg);
+  }
   }
