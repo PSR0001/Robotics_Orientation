@@ -26,15 +26,10 @@
 
 
 
-  <script src="/socket.io/socket.io.js"></script>
-
+  <!-- <script src="../../../../node_modules/socket.io/client-dist/socket.io.js"></script> -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
   <script>
-    var socket = io();
-
-    socket.on('chat message', function (msg) {
-      item.textContent = msg;
-      console.log(msg);
-    });
+  
    
 
     const showChart = () => {
@@ -66,6 +61,14 @@
     }
 
     showChart()
+
+    
+  // var socket = io();
+
+  //   socket.on('chat message', function (msg) {
+  //     item.textContent = msg;
+  //     console.log(msg);
+  //   });
   </script>
 </body>
 

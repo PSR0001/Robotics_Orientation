@@ -5,8 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+        style 
+            include ../assets/CSS/style.css
 </head>
+ script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js")
+ script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js")
 <body>
-    <h1>hi me pug</h1>
+    |<div class="chart">
+    |<canvas id="chart"></canvas>
+    |</div>
+
 </body>
+     script
+      include ../assets/JS/script.js
+     
 </html>
