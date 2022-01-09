@@ -1,12 +1,9 @@
+
+
 const URL = "http://localhost:5000/";
 
 
-// custom cursor
-const cursor = document.querySelector('.cursor')
 
-document.addEventListener('mousemove', e => {
-  cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
-})
 
 
 
@@ -23,27 +20,28 @@ let Data;
  });
 
 
- let Data_Distance;
+//  let Data_Distance;
  //Chart- Data
  socket.on("Chart-Data", (data) => {
-     console.log(data.distance);
-     Data_Distance=data;
-    console.log(Data_Distance)
+    //  console.log(data.distance);
+    //  Data_Distance=data;
+    // console.log(Data_Distance)
+    pushValueChart(data)
  });
  
  socket.on("disconnect", () => {
-     console.log(socket.id); // undefined
+     console.log('Socket Disconnected ... ');
  });
 
 
 /*---Chart JS code---*/
-const showChart = () => {
+
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
+        datasets: [{  //index[0]
           label: 'Distance',
           data: [10, 19, 3, 5, 2, 3],
           backgroundColor: [
@@ -52,7 +50,9 @@ const showChart = () => {
           borderColor: [
             'rgba(255, 99, 132, 1)',
           ],
-          borderWidth: 1
+          borderWidth: 1,
+          spanGaps:true,//in case of empty Data
+          showLine:true
         }]
       },
       options: {
@@ -63,6 +63,19 @@ const showChart = () => {
         }
       }
     });
+    
+
+// pushing the incoming Value
+  function pushValueChart(data){
+      // console.log(myChart.data.datasets[0].data)
+      myChart.data.datasets[0].data.push(data.distance)
+      // console.log(myChart.data.datasets[0].data)
+      myChart.data.labels.push(data.time)
+
+      myChart.update();
   }
 
-  showChart()
+
+
+
+ 
