@@ -1,20 +1,32 @@
 const URL = "http://localhost:5000/";
 
 
-
-
 // Socket.io Code-->
 const socket = io(URL);
 
+let Data;
+
 // client-side
- socket.on("connection", () => {
+ socket.on("connection", (data) => {
      console.log(socket.id); // x8WIv7-mJelg7on_ALbx
+     console.log(data);
+
+ });
+
+
+ let Data_Distance;
+ //Chart- Data
+ socket.on("Chart-Data", (data) => {
+     console.log(data.distance);
+     Data_Distance=data;
+    console.log(Data_Distance)
  });
  
  socket.on("disconnect", () => {
      console.log(socket.id); // undefined
  });
 
+ 
 /*---Chart JS code---*/
 const showChart = () => {
     const ctx = document.getElementById('chart').getContext('2d');
@@ -45,7 +57,3 @@ const showChart = () => {
   }
 
   showChart()
-
-
-
-

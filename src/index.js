@@ -2,19 +2,20 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const http = require('http');
+const { instrument } = require("@socket.io/admin-ui");
 const path = require('path')
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: ["https://admin.socket.io"],
+    credentials: true
   },
 });
 
 require('dotenv').config();
 
 const PORT = Number(process.env.PORT || 3000);
-
 
 // using template engine pug
 app.set('view engine', 'pug')
@@ -30,11 +31,19 @@ app.use('*', (req, res) => {
 })
 
 // start http server
-server.listen(5000, () => {
+server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
-let clients = [];
-// Listener
+
+// testing 
+let message = {
+  "distance": 12,
+  "time": 1
+}
+
+
+
+// Socket listening 
 try {
 
   io.on("connection", (socket) => {
@@ -44,21 +53,16 @@ try {
     socket.on("disconnect", () => {
       console.log(`User with id: ${socket.id} disconnected`);
     });
-    
-    socket.on("toggle", (data) => {
-      // console.log(data);
-      socket.broadcast.emit("toggle", data);
-    });
-    socket.on("slider", (data) => {
-      // console.log(data);
-      socket.broadcast.emit("slider", data);
-    });
+    // console.log(socket);
+    // socket.on("")
+
+
+    io.emit("Chart-Data",message)
 
   });
 
   //admin-ui
-  // instrument(io, { auth: false });
-} catch (err) {
-  console.log(`Could not start the server, ${err}`);
+  instrument(io, { auth: false });
+} catch (error) {
+  console.log(`Could not start the server, ${error}`);
 }
-
