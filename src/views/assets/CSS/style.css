@@ -121,22 +121,25 @@
   font-family: "Roboto Slab", serif;
 }
 
+
+
 .chart {
-  height: 85%;
-  width: 100%;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-}
-
-.chart {
   height: 80%;
   width: 70%;
   background-image: var(--midddle-color);
   box-shadow: 8px 8px 4px var(--middle-shadow-top),
     -8px -8px 12px var(--middle-shadow-bottom);
   border-radius: 1%;
+}
+#chart {
+  height: 85%;
+  width: 100%;
+  color: white;
 }
 
 /* dark mode */
@@ -157,6 +160,9 @@
     height: 50px;
     width: 50px;
   }
+  .chart{
+    width: 80%;
+  }
 }
 @media only screen and (max-width: 700px) {
   .round_plus {
@@ -170,11 +176,8 @@
   .iotName h1 {
     font-size: 3rem;
   }
-}
-
-@media only screen and (max-width: 700px) {
-  .Drak-Light h3 {
-    font-size: 0.95rem;
+  .chart{
+    width: 91%;
   }
   .imageOne {
     height: 2rem;
@@ -184,7 +187,11 @@
     height: 3.7rem;
     width: 3.7rem;
   }
+  .Drak-Light h3 {
+    font-size: 0.95rem;
+  }
 }
+
 @media only screen and (max-width: 550px) {
   .container {
     display: flex;
@@ -217,6 +224,7 @@
   .button {
     height: 30px;
   }
+ 
 }
 
 /* 
