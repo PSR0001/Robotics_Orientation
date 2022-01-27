@@ -68,7 +68,6 @@ try {
     // console.log(socket);
     // socket.on("")
 
-
     io.emit("Chart-Data",message)
 
   });
