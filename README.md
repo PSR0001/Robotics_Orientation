@@ -94,7 +94,9 @@ It should look something like this:
 <img alt="Admin UI" src="./images/iot3.png" />
 
 <br>
-<img alt="Admin UI" src="./images/iot4.png" /><img alt="Admin UI" src="./images/iot5.png" />
+<img alt="Phone-Light" src="./images/iot4.png" width="200px"/> <img alt="Phone-Dark" src="./images/iot5.png" width="200px"/>
+
+<br>
 
 ## **Contribution**
 This is a concept for beginners starting with IoT. Feel free to fork, clone, create issues and/or make PRs. We will be more than happy to receive your contributions.
