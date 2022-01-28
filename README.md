@@ -83,7 +83,8 @@ Go to this URL: https://admin.socket.io and put ```test-code-0001.herokuapp.com/
 
 It should look something like this:
 
-<img alt="Phone-Light" src="C:\Users\91974\Pictures\TECH PEEKS WEEK 07\Admin_UI.png" width="200px"/>
+<img alt="Admin UI" src="./images/Admin_UI.png" width="200px"/>
+<!-- ![Admin UI](C:\Users\91974\Pictures\TECH PEEKS WEEK 07\Admin_UI.png) -->
 <br>
 <br>
 
