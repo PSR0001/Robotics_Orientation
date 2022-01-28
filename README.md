@@ -90,11 +90,11 @@ It should look something like this:
 
 ## **Projects Picture :**
 
-<img alt="Admin UI" src="./images/iot1.png" />
-<img alt="Admin UI" src="./images/iot3.png" />
+<img alt="Laptop-Distance" src="./images/iot1.png" />
+<img alt="Laptop-RGB" src="./images/iot3.png" />
 
 <br>
-<img alt="Phone-Light" src="./images/iot4.png" width="200px"/> <img alt="Phone-Dark" src="./images/iot5.png" width="200px"/>
+<img alt="Phone_Distance" src="./images/iot4.png" width="200px"/> <img alt="Phone-RGB" src="./images/iot5.png" width="200px"/>
 
 <br>
 
