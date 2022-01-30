@@ -100,6 +100,10 @@ It should look something like this:
 
 ## **Contribution**
 This is a concept for beginners starting with IoT. Feel free to fork, clone, create issues and/or make PRs. We will be more than happy to receive your contributions.
+## **Announcement**
+If the Server not working or u face any problem deploying it, plz see the other server of the same project.
+
+[click Me](https://github.com/PSR0001/Test-Heroku-Server)
 
 
 
